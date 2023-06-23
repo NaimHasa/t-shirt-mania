@@ -24,6 +24,10 @@ const Home = () => {
 
 
     }
+    const handleRemove = tshirt => {
+        const reamining = cart.filter(ts => ts._id !== tshirt._id)
+        setCart(reamining);
+    }
     return (
         <div className='home-container'>
             <div className='tshirt-container'>
@@ -38,7 +42,7 @@ const Home = () => {
                 }
             </div>
             <div className='cart-container'>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart} handleRemove={handleRemove}></Cart>
             </div>
 
         </div>
