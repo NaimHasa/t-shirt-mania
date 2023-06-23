@@ -12,8 +12,16 @@ const Home = () => {
 
     const handleAddToCart = tshirt => {
         // console.log(tshirt)
-        const newCart = [...cart, tshirt]
-        setCart(newCart);
+        const exist = cart.find(ts => ts._id === tshirt._id)
+        if (exist) {
+            alert('Product Already added')
+        }
+        else {
+            const newCart = [...cart, tshirt]
+            setCart(newCart);
+            // alert('New Product Added');
+        }
+
 
     }
     return (
